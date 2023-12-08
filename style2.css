@@ -1,0 +1,85 @@
+/* Стили для родительского
+блока */
+.card {
+    width: 300px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative; /*
+    относительное
+    позиционирование
+    родительского элемента, чтобы
+    дочерние .product,
+    .description располагать
+    внутри card */
+    border: 1px solid #f5dde1;
+    }
+    .product, .description
+    {
+    width: 100%; /* ширина 100%
+    родителя */
+    height: 100%; /* высота
+    100% родителя */
+    position: absolute; /*
+    абсолютное позиционирование
+    элементов внутри родителя с
+    классом card */
+    left:
+    0; /* координата
+    позиционирования слева 0px*/
+    top:
+    0; /* координата
+    позиционирования сверху 0px
+    */
+    text-align: center;
+    background-color: #fff;}
+/* Стили для кнопки
+описательного блока
+карточки товара */ .description a {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f5dde1;
+    }
+    .product,
+.description {
+backface-visibility: hidden;
+}
+.description {
+    box-sizing: border-box;
+    padding: 40px;
+    transform: rotateY(180deg ); /* поворот блока с
+    описанием на 180 град,
+    прячем его в начальном
+    состоянии, без наведения
+    курсора мыши */ }
+    .product, .description
+    {
+    transition: 1s;
+    }
+    .card:hover .product {
+        transform: rotateY(180deg); /*
+        разворачиваем блок с изображением
+        на 180 градусов */
+        }
+        .card:hover .description {
+        transform: rotateY(360deg); /*
+        возвращаем блок*/
+        }
+        h1 {
+            background-color: #d4c4ff;
+            width: 30vw;
+            color: #fff;
+            text-align: center;
+            animation: myAnim 8s linear alternate infinite;
+            }
+ @keyframes myAnim {
+    from {
+    margin-left: 0%;
+    }
+    to {
+    margin-left: 75%;
+    }
+}
